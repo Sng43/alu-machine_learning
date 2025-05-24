@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
-def matrix_shape(matrix):
 
-    mat = []
-    while isinstance(matrix, list):
-        mat.append(len(matrix))
-        matrix = matrix[0]
-    return mat
+def transpose(matrix):
+
+    res = [
+        [matrix[j][i] for j in range(len(matrix))]
+        for i in range(len(matrix[0]))]
+
+    return res
 
 
-new_mat = [[1, 2, 4], [3, 4], [5, 6]]
 
-print(matrix_shape(new_mat))  # Output: [2, 2]
+mat2 = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15],
+        [16, 17, 18, 19, 20], [21, 22, 23, 24, 25], [26, 27, 28, 29, 30]]
+print(mat2)
+print(transpose(mat2))
