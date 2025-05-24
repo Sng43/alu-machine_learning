@@ -1,16 +1,15 @@
 #!/usr/bin/env python3
 
-def transpose(matrix):
+def add(arr1, arr2):
 
-    res = [
-        [matrix[j][i] for j in range(len(matrix))]
-        for i in range(len(matrix[0]))]
+    if len(arr1) == len(arr2):
+        return [arr1[i] + arr2[i] for i in range(len(arr1))]   
 
-    return res
-
-
-
-mat2 = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15],
-        [16, 17, 18, 19, 20], [21, 22, 23, 24, 25], [26, 27, 28, 29, 30]]
-print(mat2)
-print(transpose(mat2))
+    else:
+        return None
+arr1 = [1, 2, 3, 4]
+arr2 = [5, 6, 7, 8]
+print(add(arr1, arr2))
+# print(arr1)
+# print(arr2)
+# # print(add(arr1, [1, 2, 3]))
