@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-    A class DeepNeuralNetwork that defines a deep neural
-    network performing binary classification
+A class DeepNeuralNetwork that defines a deep neural
+network performing binary classification
 """
 
 import numpy as np
@@ -31,8 +31,7 @@ class DeepNeuralNetwork:
             if not isinstance(layers[i], int) or layers[i] < 1:
                 raise TypeError("layers must be a list of positive integers")
             if i == 0:
-                self.weights["W1"] = (
-                    np.random.randn(layers[i], nx) * np.sqrt(2 / nx))
+                self.weights["W1"] = np.random.randn(layers[i], nx) * np.sqrt(2 / nx)
             else:
                 self.weights["W" + str(i + 1)] = np.random.randn(
                     layers[i], layers[i - 1]
